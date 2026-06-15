@@ -1,7 +1,7 @@
 people = ["jack", "dan", "lorry"]
 
-for i in range(len(people)):
-    print(people[i])
+for person in people:
+    print(person)
 
 Cars = [
     {"brand": "Ford", "model": "Mustang", "year": 1964},
@@ -9,7 +9,12 @@ Cars = [
     {"brand": "Honda", "model": "NSX", "year": 1991}
     ]
 for car in Cars:
-    print(car["brand"], car["model"], car["year"])
+  print(car["brand"], car["model"], car["year"])
+
+Cars.append({"brand": "Toyota", "model": "Suora", "year": 2002})
+for car in Cars:
+  print(car["brand"], car["model"], car["year"])
+
 
 with open("demofile.txt", "a") as f:
   f.write("Now the file has more content!")
@@ -20,8 +25,14 @@ with open("demofile.txt") as f:
   
 with open("demofile.txt") as f:
   print(f.readline())
-  print(f.readline())
 
 with open("demofile.txt") as f:
   for x in f:
     print(x)
+
+brand = input(f"add to list of car in same format first brand")
+model = input(f"model")
+year = input(f"year")
+Cars.append({"brand": brand, "model": model, "year": year})
+for car in Cars:
+  print(car["brand"], car["model"], car["year"])
